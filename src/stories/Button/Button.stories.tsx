@@ -56,6 +56,6 @@ export const Small: Story = {
 export const Link: Story = {
   args: {
     mods: ['primary', 'link'],
-    children: <a>Click Me</a>
+    children: <a href="https://www.google.com">Click Me</a>
   },
 };
