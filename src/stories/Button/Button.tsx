@@ -1,11 +1,16 @@
 import { generateClasses, parseClasses } from "../../scripts/utils";
 import type { HTMLProps, ReactNode } from "react";
-import "./button.scss";
+import "./button.css";
+
+type CustomButtonMods =
+  FirebugConfig["button"] extends { customMods: readonly (infer T)[] }
+    ? T
+    : never;
 
 interface Props extends HTMLProps<HTMLButtonElement> {
   children: ReactNode
   className?: string
-  mods?: ('primary' | 'secondary' | 'small' | 'large' | 'link' | 'fit' | 'bold' | 'danger' | 'img' | 'icon')[]
+  mods?: ('primary' | 'secondary' | 'small' | 'large' | 'link' | 'fit' | 'bold' | 'danger' | 'img' | 'icon' | CustomButtonMods)[]
   type?: 'submit' | 'reset' | 'button'
 }
 
