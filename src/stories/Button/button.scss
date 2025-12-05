@@ -4,7 +4,7 @@
   transition: all ease-in-out 0.17s;
 
   &--primary {
-    border: none;
+    border: 1px solid transparent;
     border-radius: 0.3rem;
     padding: 0.5rem;
     color: white;
@@ -16,9 +16,11 @@
 
     &:hover {
       background-color: transparent;
+      border-color: black;
 
       &:disabled {
         background-color: black;
+        border-color: transparent;
       }
     }
   }
@@ -46,7 +48,7 @@
   }
 
   &--large {
-    font-size: var(--ft-body-2);
+    font-size: var(--ft-body-3);
   }
 
   &--fit {
@@ -56,10 +58,6 @@
 
   &--bold {
     font-weight: bold;
-  }
-
-  &--danger {
-    background-color: var(--red-1);
   }
 
   &--link {
@@ -77,8 +75,41 @@
     }
   }
 
+  &--img {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    
+    img {
+      max-width: 1.8rem;
+    }
+  }
+
+  &--icon {    
+    img {
+      max-width: 1.8rem;
+    }
+  }
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
+  }
+}
+
+.button--danger.button--primary {
+  background-color: var(--red-3);
+
+  &:hover {
+    border: 1px solid var(--red-3);
+    background-color: transparent;
+  }
+}
+
+.button--danger.button--secondary {
+  border: 1px solid var(--red-3);
+
+  &:hover {
+    background-color: var(--red-3);;
   }
 }

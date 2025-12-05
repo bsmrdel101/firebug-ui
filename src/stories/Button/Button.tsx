@@ -5,7 +5,7 @@ import "./button.scss";
 interface Props extends HTMLProps<HTMLButtonElement> {
   children: ReactNode
   className?: string
-  mods?: ('primary' | 'secondary' | 'small' | 'large' | 'link' | 'fit' | 'bold' | 'danger')[]
+  mods?: ('primary' | 'secondary' | 'small' | 'large' | 'link' | 'fit' | 'bold' | 'danger' | 'img' | 'icon')[]
   type?: 'submit' | 'reset' | 'button'
 }
 

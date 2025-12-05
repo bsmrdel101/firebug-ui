@@ -59,3 +59,25 @@ export const Link: Story = {
     children: <a href="https://www.google.com">Click Me</a>
   },
 };
+
+export const Danger: Story = {
+  args: {
+    mods: ['primary', 'danger'],
+    children: 'Delete'
+  },
+};
+
+export const Img: Story = {
+  args: {
+    mods: ['img'],
+    children: <img src="https://avatars.githubusercontent.com/u/43832671?v=4" alt="" draggable={false} />
+  }
+};
+
+export const Icon: Story = {
+  args: {
+    mods: ['icon', 'primary'],
+    children: <img src="https://avatars.githubusercontent.com/u/43832671?v=4" alt="" draggable={false} />
+  }
+};
+
