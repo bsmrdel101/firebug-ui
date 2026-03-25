@@ -1,6 +1,6 @@
 {
   "name": "firebug-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "UI library for react and typescript",
   "license": "MIT",
   "keywords": [
@@ -13,27 +13,16 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "vite build",
-    "prepublishOnly": "npm run build"
+    "build": "npm run build:css && tsup",
+    "build:css": "sass src/styles/bundle.scss src/styles/bundle.css --style=compressed",
+    "scss:watch": "scss-bundling watch"
   },
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    },
-    "./styles": "./dist/index.css"
-  },
   "files": [
     "dist",
+    "public",
     "README.md",
     "package.json"
   ],
@@ -43,14 +32,20 @@
   },
   "devDependencies": {
     "@storybook/addon-styling-webpack": "^3.0.0",
-    "@storybook/react-vite": "^10.1.4",
+    "@storybook/react-vite": "^10.3.3",
+    "@swc/core": "^1.15.21",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
-    "sass": "^1.94.2",
-    "storybook": "^10.1.4",
+    "sass": "^1.98.0",
+    "scss-bundling": "^1.1.4",
+    "storybook": "^10.3.3",
+    "tsup": "^8.5.1",
     "typescript": "~5.9.3",
     "vite": "^7.2.6",
     "vite-plugin-dts": "^4.5.4"
+  },
+  "dependencies": {
+    "react-draggable": "^4.5.0"
   }
 }

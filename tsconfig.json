@@ -1,37 +1,25 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "useDefineForClassFields": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "firebug.config": [
-        "./src/firebug-config.d.ts",
-        "./firebug.config.ts"
-      ]
-    },
-
-    /* Bundler mode */
+    "strict": true,
+    "esModuleInterop": true,
+    "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    "isolatedModules": true,
     "jsx": "react-jsx",
-    
-    /* Declaration files */
     "declaration": true,
-    "declarationMap": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "outDir": "dist",
+    "noEmit": false
   },
-  "include": ["src/**/*", "src/config.d.ts", "src/config.d.ts"],
-  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.stories.ts"]
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "typesVersions": {
+    "*": {
+      "*": ["dist/*"]
+    }
+  }
 }

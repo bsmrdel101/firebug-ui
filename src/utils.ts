@@ -6,3 +6,7 @@ export const generateClasses = (className: string, variantList: string[], elmt: 
 export const parseClasses = (classes: string): object => {
   return classes ? { className: classes } : {};
 };
+
+export const generateRandId = (): string => {
+  return Math.random().toString(36).substr(2, 9);
+};

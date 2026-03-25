@@ -1,2 +1,4 @@
-import "../dist/firebug-ui.css";
-export { default as Button } from "./stories/Button/Button";
+import { injectStyles } from "./styles/inject";
+injectStyles();
+
+export * from "./stories/Button/Button";

@@ -1,0 +1,4 @@
+{
+  "rootDir": "src/styles",
+  "outputFile": "src/styles/bundle.scss"
+}
