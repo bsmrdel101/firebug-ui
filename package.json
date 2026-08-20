@@ -24,6 +24,7 @@
     "build-storybook": "storybook build",
     "build": "npm run build:css && tsup",
     "build:css": "sass src/styles/bundle.scss src/styles/bundle.css --style=compressed",
+    "scss:build": "scss-bundling build",
     "scss:watch": "scss-bundling watch"
   },
   "keywords": [
@@ -39,14 +40,14 @@
   },
   "devDependencies": {
     "@storybook/addon-styling-webpack": "^3.0.0",
-    "@storybook/react-vite": "^10.3.3",
+    "@storybook/react-vite": "^10.5.10",
     "@swc/core": "^1.15.21",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
     "sass": "^1.98.0",
     "scss-bundling": "^1.1.5",
-    "storybook": "^10.3.3",
+    "storybook": "^10.5.10",
     "tsup": "^8.5.1",
     "typescript": "~5.9.3",
     "vite": "^7.2.6",

@@ -21,7 +21,7 @@ You can define your own mods. A class will be automatically added to the compone
 
 Put them in a `types.d.ts` file like this:
 ```ts
-import { Button } from "firebug-ui";
+import {} from "firebug-ui";
 
 declare module "firebug-ui" {
   interface ButtonMods {
