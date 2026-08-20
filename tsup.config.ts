@@ -1,13 +1,14 @@
 import { defineConfig } from "tsup";
 
+
 export default defineConfig({
-  entry: ["src/index.ts"],
-  format: ["esm"],
+  entry: ['src/index.ts'],
+  format: ['esm'],
   dts: true,
   clean: true,
   minify: false,
   loader: {
-    ".css": "text",
+    '.css': 'text',
   },
-  external: ["react", "react-dom"]
+  external: ['react', 'react-dom']
 });
