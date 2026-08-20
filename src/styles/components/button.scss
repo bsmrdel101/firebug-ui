@@ -1,6 +1,6 @@
 .button {
   cursor: pointer;
-  font-size: var(--ft-body-0);
+  font-size: var(--ft-md-0);
   transition: all ease-in-out 0.17s;
 
   &--primary {
@@ -10,7 +10,7 @@
     color: white;
     background-color: black;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    font-size: var(--ft-body-1);
+    font-size: var(--ft-md-1);
 
     a { padding: 0.5rem; }
 
@@ -48,7 +48,7 @@
   }
 
   &--large {
-    font-size: var(--ft-body-3);
+    font-size: var(--ft-md-3);
   }
 
   &--fit {

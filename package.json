@@ -20,7 +20,7 @@
     "package.json"
   ],
   "scripts": {
-    "storybook": "storybook dev -p 6006",
+    "dev": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build": "npm run build:css && tsup",
     "build:css": "sass src/styles/bundle.scss src/styles/bundle.css --style=compressed",

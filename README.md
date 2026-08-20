@@ -1,3 +1,185 @@
 # firebug-ui
 
 UI library for react and typescript.
+
+## Mods
+Each component has mods that can be applied to them.
+```tsx
+import { Button } from "firebug-ui";
+
+export default function MyComponent() {
+  return (
+    <div>
+      <Button mods={['primary']}>Click Me</Button>
+    </div>
+  );
+}
+```
+
+## Custom Mods
+You can define your own mods. A class will be automatically added to the component `<COMPONENT>--<MOD>` (Ex: `button--rounded`).
+
+Put them in a `types.d.ts` file like this:
+```ts
+import { Button } from "firebug-ui";
+
+declare module "firebug-ui" {
+  interface ButtonMods {
+    rounded: true
+    shadow: true
+    glowing: true
+  }
+}
+```
+
+Then you can create the styles for those mods in any css file like this. Existing mods can also be moddified like this.
+```css
+.button--rounded {
+  border-radius: 1rem;
+}
+```
+---
+```tsx
+import { Button } from "firebug-ui";
+
+export default function MyComponent() {
+  return (
+    <div>
+      <Button mods={['primary', 'rounded']}>Click Me</Button>
+    </div>
+  );
+}
+```
+
+## Fonts
+```scss
+--ft-h1: 2.5rem;
+--ft-h2: 1.5625rem;
+--ft-h3: 1.25rem;
+--ft-sm-0: 0.5rem;
+--ft-sm-1: 0.6rem;
+--ft-sm-2: 0.68rem;
+--ft-md-0: 0.83rem;
+--ft-md-1: 0.875rem;
+--ft-md-2: 1rem;
+--ft-md-3: 1.2rem;
+--ft-lg-0: 3.125rem;
+--ft-lg-1: 4rem;
+--ft-lg-2: 5rem;
+--ft-lg-3: 7rem;
+--ft-lg-4: 8rem;
+--ft-lg-5: 9rem;
+```
+
+## Colors
+```scss
+--red-0: oklch(25.8% 0.092 26.042);
+--red-1: oklch(39.6% 0.141 25.723);
+--red-2: oklch(44.4% 0.177 26.899);
+--red-3: oklch(50.5% 0.213 27.518);
+--red-4: oklch(57.7% 0.245 27.325);
+--red-5: oklch(63.7% 0.237 25.331);
+--red-6: oklch(70.4% 0.191 22.216);
+--red-7: oklch(80.8% 0.114 19.571);
+--red-8: oklch(88.5% 0.062 18.334);
+
+--orange-0: oklch(28% 0.085 46);
+--orange-1: oklch(39% 0.125 45);
+--orange-2: oklch(46% 0.16 46);
+--orange-3: oklch(53% 0.19 48);
+--orange-4: oklch(61% 0.21 50);
+--orange-5: oklch(67% 0.20 52);
+--orange-6: oklch(74% 0.17 54);
+--orange-7: oklch(83% 0.12 55);
+--orange-8: oklch(91% 0.06 56);
+
+--yellow-0: oklch(30% 0.075 88);
+--yellow-1: oklch(42% 0.11 88);
+--yellow-2: oklch(50% 0.14 88);
+--yellow-3: oklch(58% 0.17 88);
+--yellow-4: oklch(66% 0.18 88);
+--yellow-5: oklch(73% 0.17 88);
+--yellow-6: oklch(80% 0.15 88);
+--yellow-7: oklch(88% 0.11 88);
+--yellow-8: oklch(94% 0.06 88);
+
+--green-0: oklch(27% 0.075 145);
+--green-1: oklch(38% 0.11 145);
+--green-2: oklch(45% 0.14 145);
+--green-3: oklch(52% 0.17 145);
+--green-4: oklch(59% 0.19 145);
+--green-5: oklch(66% 0.18 145);
+--green-6: oklch(73% 0.15 145);
+--green-7: oklch(82% 0.105 145);
+--green-8: oklch(91% 0.055 145);
+
+--teal-0: oklch(27% 0.065 175);
+--teal-1: oklch(38% 0.095 175);
+--teal-2: oklch(45% 0.125 175);
+--teal-3: oklch(52% 0.15 175);
+--teal-4: oklch(59% 0.17 175);
+--teal-5: oklch(66% 0.16 175);
+--teal-6: oklch(73% 0.135 175);
+--teal-7: oklch(82% 0.095 175);
+--teal-8: oklch(91% 0.05 175);
+
+--cyan-0: oklch(27% 0.07 210);
+--cyan-1: oklch(38% 0.105 210);
+--cyan-2: oklch(45% 0.135 210);
+--cyan-3: oklch(52% 0.16 210);
+--cyan-4: oklch(59% 0.18 210);
+--cyan-5: oklch(66% 0.17 210);
+--cyan-6: oklch(74% 0.145 210);
+--cyan-7: oklch(83% 0.10 210);
+--cyan-8: oklch(91% 0.055 210);
+
+--blue-0: oklch(25% 0.09 255);
+--blue-1: oklch(36% 0.13 255);
+--blue-2: oklch(44% 0.17 255);
+--blue-3: oklch(51% 0.21 255);
+--blue-4: oklch(58% 0.24 255);
+--blue-5: oklch(64% 0.23 255);
+--blue-6: oklch(71% 0.19 255);
+--blue-7: oklch(81% 0.13 255);
+--blue-8: oklch(90% 0.065 255);
+
+--indigo-0: oklch(25% 0.085 275);
+--indigo-1: oklch(36% 0.125 275);
+--indigo-2: oklch(44% 0.16 275);
+--indigo-3: oklch(51% 0.20 275);
+--indigo-4: oklch(58% 0.23 275);
+--indigo-5: oklch(64% 0.22 275);
+--indigo-6: oklch(72% 0.18 275);
+--indigo-7: oklch(82% 0.12 275);
+--indigo-8: oklch(91% 0.06 275);
+
+--purple-0: oklch(25% 0.085 300);
+--purple-1: oklch(36% 0.125 300);
+--purple-2: oklch(44% 0.16 300);
+--purple-3: oklch(51% 0.20 300);
+--purple-4: oklch(58% 0.23 300);
+--purple-5: oklch(64% 0.22 300);
+--purple-6: oklch(72% 0.18 300);
+--purple-7: oklch(82% 0.12 300);
+--purple-8: oklch(91% 0.06 300);
+
+--pink-0: oklch(27% 0.08 345);
+--pink-1: oklch(38% 0.12 345);
+--pink-2: oklch(46% 0.16 345);
+--pink-3: oklch(53% 0.20 345);
+--pink-4: oklch(60% 0.22 345);
+--pink-5: oklch(66% 0.21 345);
+--pink-6: oklch(73% 0.17 345);
+--pink-7: oklch(82% 0.12 345);
+--pink-8: oklch(91% 0.06 345);
+
+--gray-0: oklch(20% 0 0);
+--gray-1: oklch(30% 0 0);
+--gray-2: oklch(40% 0 0);
+--gray-3: oklch(50% 0 0);
+--gray-4: oklch(60% 0 0);
+--gray-5: oklch(70% 0 0);
+--gray-6: oklch(78% 0 0);
+--gray-7: oklch(88% 0 0);
+--gray-8: oklch(96% 0 0);
+```
